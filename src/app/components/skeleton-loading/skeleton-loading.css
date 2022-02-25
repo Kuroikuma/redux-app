@@ -1,0 +1,69 @@
+.screenshot_container {
+  --accents-1: #fafafa;
+  --accents-2: #eaeaea;
+  --accents-3: #1e213a;
+  --accents-4: #888;
+  --accents-5: #100e1d;
+  --accents-6: #444;
+  --accents-7: #333;
+  --accents-8: #111;
+  --geist-radius: 5px;
+}
+.screenshot_container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border: 1px inset var(--accents-3);
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex: 0 0 auto;
+  overflow: hidden;
+}
+
+@keyframes skeleton_loading {
+  0% {
+    background-position: 200% 0;
+  }
+
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton_wrapper:before {
+  height: 100%;
+  width: 100%;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 4px;
+  z-index: 100;
+  background-image: linear-gradient(
+    270deg,
+    var(--accents-3),
+    var(--accents-5),
+    var(--accents-5),
+    var(--accents-3)
+  );
+  background-size: 400% 100%;
+  -webkit-animation: skeleton_loading 8s ease-in-out infinite;
+  animation: skeleton_loading 8s ease-in-out infinite;
+}
+
+.skeleton_skeleton {
+  border-radius: var(--geist-radius);
+  background-image: linear-gradient(
+    270deg,
+    var(--accents-3),
+    var(--accents-5),
+    var(--accents-5),
+    var(--accents-3)
+  );
+  background-size: 400% 100%;
+  -webkit-animation: skeleton_loading 8s ease-in-out infinite;
+  animation: skeleton_loading 8s ease-in-out infinite;
+}

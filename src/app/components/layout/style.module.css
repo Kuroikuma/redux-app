@@ -1,0 +1,16 @@
+.container {
+  height: auto;
+  min-height: 100vh;
+  width: 98.7vw;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e6e9ed;
+}
+.content {
+  height: auto;
+  width: 100%;
+  margin-top: 15vh;
+}

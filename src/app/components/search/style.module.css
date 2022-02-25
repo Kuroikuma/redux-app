@@ -1,0 +1,11 @@
+.input {
+  height: 7vh;
+  width: 40vw;
+  padding: 0 20px 0 20px;
+  border-radius: 18px;
+  font-family: Poppins;
+  font-size: 18px;
+  color: rgb(149, 149, 149);
+  border: 1px solid rgb(209 209 209);
+  outline: none;
+}
