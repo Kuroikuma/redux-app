@@ -11,3 +11,16 @@ export const getPokemons = (limit = 151) => {
       console.log(error)
     })
 }
+
+export const getPokemonsWithDetails = async (pokemonList) => {
+  const res = await Promise.all(
+    pokemonList.map((pokemon) =>
+      fetch(pokemon.url)
+        .then((res) => res.json())
+        .then((response) => {
+          return response
+        })
+    )
+  )
+  return res
+}

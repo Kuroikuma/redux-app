@@ -10,7 +10,9 @@ export const HomeView = () => {
     <Layout>
       <div className={style.home_container}>
         <Search />
-        <PokemonList onLoading={() => <SkeletonLoader />}>
+        <PokemonList
+          onLoading={(item, index) => <SkeletonLoader key={index} />}
+        >
           {(pokemon) => (
             <PokemonCard
               key={`${pokemon.id}-${pokemon.name}`}

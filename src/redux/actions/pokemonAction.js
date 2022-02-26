@@ -1,4 +1,4 @@
-import { getPokemons } from '../../api/getPokemons'
+import { getPokemons, getPokemonsWithDetails } from '../../api/getPokemons'
 import { ACTION_TYPES } from './type'
 
 const setPokemon = (pokemons) => {
@@ -28,20 +28,13 @@ export const setFavorites = (pokemonID) => {
   }
 }
 
-export const getPokemonsWithDetails = () => async (dispatch) => {
+export const fetchPokemon = () => async (dispatch) => {
   try {
     dispatch(setLoading())
+
     const response = await getPokemons()
     const pokemonList = response
-    const res = await Promise.all(
-      pokemonList.map((pokemon) =>
-        fetch(pokemon.url)
-          .then((res) => res.json())
-          .then((response) => {
-            return response
-          })
-      )
-    )
+    const res = await getPokemonsWithDetails(pokemonList)
 
     dispatch(setPokemon(res))
 
