@@ -8,23 +8,29 @@ const setPokemon = (pokemons) => {
   }
 }
 
-const setError = (error) => {
+export const setError = (error) => {
   return {
     type: ACTION_TYPES.SET_ERROR,
     payload: error,
   }
 }
 
-const setLoading = (loading) => {
+export const setLoading = () => {
   return {
     type: ACTION_TYPES.SET_LOADING,
-    payload: loading,
+  }
+}
+
+export const setFavorites = (pokemonID) => {
+  return {
+    type: ACTION_TYPES.SET_FAVORITE,
+    payload: pokemonID,
   }
 }
 
 export const getPokemonsWithDetails = () => async (dispatch) => {
   try {
-    dispatch(setLoading(true))
+    dispatch(setLoading())
     const response = await getPokemons()
     const pokemonList = response
     const res = await Promise.all(
@@ -36,8 +42,10 @@ export const getPokemonsWithDetails = () => async (dispatch) => {
           })
       )
     )
-    dispatch(setLoading(false))
-    return dispatch(setPokemon(res))
+
+    dispatch(setPokemon(res))
+
+    return dispatch(setLoading())
   } catch (error) {
     dispatch(setError(true))
   }

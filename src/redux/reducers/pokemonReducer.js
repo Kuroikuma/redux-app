@@ -13,12 +13,26 @@ const ACTION_REDUCER = {
   }),
   [ACTION_TYPES.SET_LOADING]: (state, action) => ({
     ...state,
-    loading: action.payload,
+    loading: !state.loading,
   }),
   [ACTION_TYPES.SET_ERROR]: (state, action) => ({
     ...state,
     error: action.payload,
   }),
+  [ACTION_TYPES.SET_FAVORITE]: (state, action) => {
+    const newPokemonList = [...state.list]
+
+    const currentPokemonItem = newPokemonList.findIndex(
+      (item) => item.id === action.payload
+    )
+
+    if (currentPokemonItem >= 0) {
+      newPokemonList[currentPokemonItem].favorite =
+        !newPokemonList[currentPokemonItem].favorite
+    }
+
+    return { ...state, list: newPokemonList }
+  },
 }
 
 export const pokemonReducer = (state = initialState, action) => {
