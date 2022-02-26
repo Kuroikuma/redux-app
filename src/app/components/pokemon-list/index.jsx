@@ -8,11 +8,17 @@ export const PokemonListView = ({
   loading,
   onLoading,
 }) => {
+  console.log('🚀 ~ file: index.jsx ~ line 11 ~ loading', loading)
+
   return (
     <>
       {error && onError()}
-      {loading && onLoading()}
-      <div className="PokemonList">{list.length && list.map(children)}</div>
+      {loading && (
+        <div className="PokemonList">{Array(12).fill('').map(onLoading)}</div>
+      )}
+      <div className="PokemonList">
+        {!loading && list.length && list.map(children)}
+      </div>
     </>
   )
 }
