@@ -11,6 +11,14 @@ const ACTION_REDUCER = {
     ...state,
     list: action.payload,
   }),
+  [ACTION_TYPES.SET_LOADING]: (state, action) => ({
+    ...state,
+    loading: action.payload,
+  }),
+  [ACTION_TYPES.SET_ERROR]: (state, action) => ({
+    ...state,
+    error: action.payload,
+  }),
 }
 
 export const pokemonReducer = (state = initialState, action) => {

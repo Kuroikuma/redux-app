@@ -24,7 +24,7 @@ const setLoading = (loading) => {
 
 export const getPokemonsWithDetails = () => async (dispatch) => {
   try {
-    setLoading(true)
+    dispatch(setLoading(true))
     const response = await getPokemons()
     const pokemonList = response
     const res = await Promise.all(
@@ -36,9 +36,9 @@ export const getPokemonsWithDetails = () => async (dispatch) => {
           })
       )
     )
-    setLoading(false)
+    dispatch(setLoading(false))
     return dispatch(setPokemon(res))
   } catch (error) {
-    setError(true)
+    dispatch(setError(true))
   }
 }

@@ -1,17 +1,12 @@
 .screenshot_container {
-  --accents-1: #fafafa;
-  --accents-2: #eaeaea;
-  --accents-3: #1e213a;
-  --accents-4: #888;
-  --accents-5: #100e1d;
-  --accents-6: #444;
-  --accents-7: #333;
-  --accents-8: #111;
-  --geist-radius: 5px;
+  --accents-3: rgba(125, 52, 221, 0.53);
+  --accents-5: rgba(126, 52, 221, 0.83);
+  --geist-radius: 24px;
 }
 .screenshot_container {
-  height: 100%;
-  width: 100%;
+  height: 300px;
+  width: 270px;
+  border-radius: var(--geist-radius);
   position: relative;
   border: 1px inset var(--accents-3);
   padding: 0;

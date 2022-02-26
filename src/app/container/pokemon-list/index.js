@@ -3,7 +3,7 @@ import { PokemonListView } from '../../components/pokemon-list'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPokemonsWithDetails } from '../../../redux/actions/pokemonAction'
 
-export const PokemonList = ({ children }) => {
+export const PokemonList = ({ children, onLoading }) => {
   const dispatch = useDispatch()
 
   //// ACTION CREATOR
@@ -21,7 +21,12 @@ export const PokemonList = ({ children }) => {
   }, [])
 
   return (
-    <PokemonListView loading={loading} error={error} list={list}>
+    <PokemonListView
+      loading={loading}
+      onLoading={onLoading}
+      error={error}
+      list={list}
+    >
       {children}
     </PokemonListView>
   )
