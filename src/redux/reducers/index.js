@@ -1,4 +1,8 @@
-import { pokemonReducer } from './pokemonReducer'
 import { combineReducers } from 'redux'
+import pokemonReducer from '../../slices/pokemon'
+import uiReducer from '../../slices/ui'
 
-export const rootReducer = combineReducers({ pokemonReducer })
+export const rootReducer = combineReducers({
+  pokemon: pokemonReducer,
+  ui: uiReducer,
+})
