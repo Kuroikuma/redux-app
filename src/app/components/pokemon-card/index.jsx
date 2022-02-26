@@ -7,10 +7,15 @@ export const PokemonCardView = ({
   image = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png',
   id,
   types,
+  favorite,
+  setFavorite,
 }) => {
   return (
     <div className="pokemonCard" style={{ backgroundColor: MAIN_COLOR }}>
-      <FavIcon fill={FAV_COLOR} />
+      <button onClick={setFavorite} className="favIcon">
+        <FavIcon fill={favorite ? FAV_COLOR : '#e6e9ed'} />
+      </button>
+
       <div className="pokemonCard__content">
         <div className="pokemonCard__image">
           <img src={image} alt="pokemon image" />
@@ -21,7 +26,7 @@ export const PokemonCardView = ({
       </div>
       <div className="pokemonCard__List__label">
         {types.map((type) => (
-          <div className="pokemonCard__label">
+          <div key={`${id}-${name}`} className="pokemonCard__label">
             <p>{type.type.name}</p>
           </div>
         ))}

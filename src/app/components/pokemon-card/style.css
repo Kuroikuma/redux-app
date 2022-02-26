@@ -17,6 +17,11 @@
   justify-content: space-between;
   align-items: center;
 }
+.favIcon {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
 .pokemonCard__name {
   height: 30%;
   width: 100%;

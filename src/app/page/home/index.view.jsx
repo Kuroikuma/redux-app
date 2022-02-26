@@ -18,6 +18,7 @@ export const HomeView = () => {
               image={pokemon.sprites.front_shiny}
               id={pokemon.id}
               types={pokemon.types}
+              favorite={pokemon.favorite}
             />
           )}
         </PokemonList>
