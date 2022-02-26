@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react'
 import { PokemonListView } from '../../components/pokemon-list'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchPokemon } from '../../../redux/actions/pokemonAction'
+import { fetchPokemons } from '../../../slices/pokemon'
 
 export const PokemonList = ({ children, onLoading }) => {
   const dispatch = useDispatch()
 
   //// ACTION CREATOR
   const setPokemons = () => {
-    dispatch(fetchPokemon())
+    dispatch(fetchPokemons())
   }
 
   /// GET STATE
-  const list = useSelector((state) => state.pokemonReducer.list)
-  const error = useSelector((state) => state.pokemonReducer.error)
-  const loading = useSelector((state) => state.pokemonReducer.loading)
+  const list = useSelector((state) => state.pokemon.list)
+  const error = useSelector((state) => state.ui.error)
+  const loading = useSelector((state) => state.ui.loading)
 
   useEffect(() => {
     setPokemons()

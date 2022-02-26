@@ -1,5 +1,5 @@
 import { PokemonCardView } from '../../components/pokemon-card/index'
-import { setFavorites } from '../../../redux/actions/pokemonAction'
+import { setFavorites } from '../../../slices/pokemon'
 import { useDispatch } from 'react-redux'
 
 export const PokemonCard = ({ name, image, id, types, favorite }) => {
