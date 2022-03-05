@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Home } from '../page/home/index'
-import { SinglePokemon } from '../page/singlePokemon/singlePokemon'
+import { SinglePokemon } from '../page/singlePokemon/SinglePokemon'
 
 export function IndexRoutes() {
   return (
