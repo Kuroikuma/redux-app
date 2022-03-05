@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Home } from './app/page/home/index'
+import { IndexRoutes } from './app/routes/index.routes'
 import { Provider } from 'react-redux'
 import { store } from './redux/store'
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
-      <Home />
+      <IndexRoutes />
     </React.StrictMode>
   </Provider>,
   document.getElementById('root')
