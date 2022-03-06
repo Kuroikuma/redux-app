@@ -7,6 +7,7 @@ export const Notification = ({ message }) => {
   const [isError, setIsError] = useState(false)
 
   const error = useSelector((state) => state.ui.error)
+  const search = useSelector((state) => state.pokemon.search)
 
   const toggleNotification = () => {
     setNotification(!notification)
@@ -17,7 +18,7 @@ export const Notification = ({ message }) => {
   }
 
   useEffect(() => {
-    if (error) {
+    if (error && search) {
       toggleNotification()
     }
     setIsError(error)

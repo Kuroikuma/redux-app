@@ -1,6 +1,6 @@
 const API = process.env.POKEAPI || 'https://pokeapi.co/api/v2/'
 
-export const getPokemons = async (limit = 151) => {
+export const getPokemons = async (limit = 15) => {
   const baseUrl = `${API}pokemon?limit=${limit}`
   try {
     const res = await fetch(baseUrl)
