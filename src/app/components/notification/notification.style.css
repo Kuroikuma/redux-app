@@ -1,0 +1,33 @@
+.notification {
+  height: 50px;
+  width: 220px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
+  position: absolute;
+  background-color: rgb(126, 52, 221);
+  opacity: 0;
+  right: 20px;
+  transform: translateY(-40px);
+  box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%),
+    0 1px 18px 0 rgb(0 0 0 / 12%);
+  transition-property: opacity, transform, -webkit-transform;
+  transition-timing-function: ease;
+  transition-duration: 2s;
+}
+.notification.show {
+  opacity: 1;
+  transform: translateY(-20px);
+}
+.notification img {
+  height: 90%;
+  object-fit: contain;
+}
+.notification p {
+  font-family: Inter;
+  font-size: 20px;
+  color: #fff;
+}
