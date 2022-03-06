@@ -12,6 +12,7 @@ export const HomeView = () => {
         <Search />
         <PokemonList
           onLoading={(item, index) => <SkeletonLoader key={index} />}
+          onError={() => console.log('cagaste')}
         >
           {(pokemon) => (
             <PokemonCard

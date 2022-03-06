@@ -12,7 +12,8 @@ export const PokemonCard = ({ name, image, id, types, favorite }) => {
   }
 
   //// ACTION CREATOR
-  const setFavorite = () => {
+  const setFavorite = (e) => {
+    e.stopPropagation()
     dispatch(setFavorites(id))
   }
 
