@@ -17,7 +17,9 @@ export const PokemonList = ({ children, onLoading }) => {
   const loading = useSelector((state) => state.ui.loading)
 
   useEffect(() => {
-    setPokemons()
+    if (!list.length) {
+      setPokemons()
+    }
   }, [])
 
   return (

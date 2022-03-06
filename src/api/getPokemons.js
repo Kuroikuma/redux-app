@@ -29,9 +29,9 @@ export const getPokemonsWithDetails = async (pokemonList) => {
   return res
 }
 
-export const getSinglePokemon = async (url) => {
+export const getSinglePokemon = async (name) => {
   try {
-    const res = await fetch(url)
+    const res = await fetch(`${API}pokemon/${name}`)
     const data = await res.json()
     return data
   } catch (error) {

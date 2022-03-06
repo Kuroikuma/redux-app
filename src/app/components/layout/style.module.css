@@ -1,7 +1,8 @@
 .container {
   height: auto;
   min-height: 100vh;
-  width: 98.7vw;
+  max-width: 100vw;
+  min-width: 98.7vw;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -11,6 +12,10 @@
 }
 .content {
   height: auto;
+  min-height: 85vh;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 15vh;
 }

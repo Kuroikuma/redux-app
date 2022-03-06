@@ -8,7 +8,7 @@ export function IndexRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/single-pokemon" element={<SinglePokemon />} />
+        <Route path="single-pokemon/:name" element={<SinglePokemon />} />
         <Route index element={<Home />} />
         <Route
           path="*"

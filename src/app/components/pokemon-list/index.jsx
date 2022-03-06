@@ -8,6 +8,8 @@ export const PokemonListView = ({
   loading,
   onLoading,
 }) => {
+  const band = list.length ? true : ''
+
   return (
     <>
       {error && onError()}
@@ -15,7 +17,7 @@ export const PokemonListView = ({
         <div className="PokemonList">{Array(12).fill('').map(onLoading)}</div>
       )}
       <div className="PokemonList">
-        {!loading && list.length && list.map(children)}
+        {!loading && band && list.map(children)}
       </div>
     </>
   )

@@ -9,9 +9,14 @@ export const PokemonCardView = ({
   types,
   favorite,
   setFavorite,
+  goSinglePokemon,
 }) => {
   return (
-    <div className="pokemonCard" style={{ backgroundColor: MAIN_COLOR }}>
+    <div
+      onClick={goSinglePokemon}
+      className="pokemonCard"
+      style={{ backgroundColor: MAIN_COLOR }}
+    >
       <button onClick={setFavorite} className="favIcon">
         <FavIcon fill={favorite ? FAV_COLOR : '#e6e9ed'} />
       </button>
