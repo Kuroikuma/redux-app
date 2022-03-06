@@ -9,6 +9,7 @@ import { setError, toggleLoading } from './ui'
 const initialState = {
   list: [],
   singlePokemon: {},
+  singlePokemonImg: '',
 }
 
 export const fetchPokemons = createAsyncThunk(
@@ -32,10 +33,11 @@ export const fetchPokemons = createAsyncThunk(
 
 export const fetchSinglePokemons = createAsyncThunk(
   '@pokemon/fetchSinglePokemons',
-  async (_, { dispatch }) => {
+  async (name, { dispatch }) => {
     try {
+      console.log(name)
       dispatch(toggleLoading())
-      const response = await getSinglePokemon()
+      const response = await getSinglePokemon(name)
 
       const single = response
 
@@ -55,6 +57,9 @@ export const pokemonSlice = createSlice({
     setPokemons: (state, action) => {
       state.list = action.payload
     },
+    setImg: (state, action) => {
+      state.singlePokemonImg = action.payload
+    },
     setSinglePokemon: (state, action) => {
       state.singlePokemon = action.payload
     },
@@ -71,7 +76,7 @@ export const pokemonSlice = createSlice({
   },
 })
 
-export const { setPokemons, setFavorites, setSinglePokemon } =
+export const { setPokemons, setFavorites, setSinglePokemon, setImg } =
   pokemonSlice.actions
 
 export default pokemonSlice.reducer

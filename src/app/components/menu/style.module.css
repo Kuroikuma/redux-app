@@ -15,6 +15,12 @@
   justify-content: center;
   align-items: center;
 }
+.home {
+  cursor: pointer;
+}
+.favorites {
+  cursor: pointer;
+}
 .logo img {
   height: 80%;
   object-fit: contain;
