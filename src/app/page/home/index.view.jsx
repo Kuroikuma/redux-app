@@ -16,7 +16,7 @@ export const HomeView = () => {
         >
           {(pokemon) => (
             <PokemonCard
-              key={`${pokemon.id}-${pokemon.name}`}
+              key={`${pokemon.id}card`}
               name={pokemon.name}
               image={pokemon.sprites.front_shiny}
               id={pokemon.id}

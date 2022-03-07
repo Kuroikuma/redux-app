@@ -30,8 +30,8 @@ export const PokemonCardView = ({
         </div>
       </div>
       <div className="pokemonCard__List__label">
-        {types.map((type) => (
-          <div key={`${id}-${name}`} className="pokemonCard__label">
+        {types.map((type, index) => (
+          <div key={index} className="pokemonCard__label">
             <p>{type.type.name}</p>
           </div>
         ))}
