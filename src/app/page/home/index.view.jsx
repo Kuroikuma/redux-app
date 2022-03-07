@@ -11,6 +11,7 @@ export const HomeView = () => {
       <div className={style.home_container}>
         <Search />
         <PokemonList
+          band="home"
           onLoading={(item, index) => <SkeletonLoader key={index} />}
           onError={() => console.log('cagaste')}
         >

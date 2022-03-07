@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Home } from '../page/home/index'
 import { SinglePokemon } from '../page/singlePokemon/SinglePokemon'
+import { Favorites } from '../page/favorites/Favorites'
 
 export function IndexRoutes() {
   return (
@@ -9,6 +10,7 @@ export function IndexRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="single-pokemon/:name" element={<SinglePokemon />} />
+        <Route path="/favorites" element={<Favorites />} />
         <Route index element={<Home />} />
         <Route
           path="*"
