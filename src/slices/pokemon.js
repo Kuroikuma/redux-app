@@ -7,7 +7,7 @@ import {
 import { setError, toggleLoading } from './ui'
 
 const initialState = {
-  list: [],
+  list: JSON.parse(localStorage.getItem('list')) || [],
   favorites: JSON.parse(localStorage.getItem('favorites')) || [],
   singlePokemon: {},
   singlePokemonImg: '',
@@ -19,14 +19,22 @@ export const fetchPokemons = createAsyncThunk(
   async (_, { dispatch }) => {
     try {
       dispatch(toggleLoading())
+      console.log('enter')
+      if (JSON.parse(localStorage.getItem('list'))) {
+        console.log('enter')
+        const pokemon = JSON.parse(localStorage.getItem('favorites'))
+        dispatch(setPokemons(pokemon))
+        dispatch(toggleLoading())
+      } else {
+        console.log('enter')
+        const response = await getPokemons()
+        const pokemonList = response
 
-      console.log('13')
-      const response = await getPokemons()
-      const pokemonList = response
-
-      const res = await getPokemonsWithDetails(pokemonList)
-      dispatch(setPokemons(res))
-      dispatch(toggleLoading())
+        const res = await getPokemonsWithDetails(pokemonList)
+        localStorage.setItem('list', JSON.stringify(res))
+        dispatch(setPokemons(res))
+        dispatch(toggleLoading())
+      }
     } catch (error) {
       dispatch(setError(true))
     }
@@ -84,12 +92,26 @@ export const pokemonSlice = createSlice({
         state.list[currentPokemonItem].favorite =
           !state.list[currentPokemonItem].favorite
 
+        localStorage.setItem('list', JSON.stringify(state.list))
         if (JSON.parse(localStorage.getItem('favorites'))) {
           const favorites = JSON.parse(localStorage.getItem('favorites'))
-          localStorage.setItem(
-            'favorites',
-            JSON.stringify(favorites.concat(state.list[currentPokemonItem]))
-          )
+
+          if (state.list[currentPokemonItem].favorite) {
+            const favNew = favorites.filter(
+              (item) => item.id !== action.payload
+            )
+
+            localStorage.setItem(
+              'favorites',
+              JSON.stringify(favNew.concat(state.list[currentPokemonItem]))
+            )
+          } else {
+            const favNew = favorites.filter(
+              (item) => item.id !== action.payload
+            )
+
+            localStorage.setItem('favorites', JSON.stringify(favNew))
+          }
         } else {
           localStorage.setItem(
             'favorites',
