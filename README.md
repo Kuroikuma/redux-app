@@ -1,4 +1,4 @@
-# Pokedux ![Status badge](https://img.shields.io/badge/status-in%20completed-green)
+# Pokedux ![Status badge](https://img.shields.io/badge/status-Completed-green)
 
 ✨ Encuentra tus pokemones favoritos y descubre todas sus habilidades para convertirte en el mejor Maestro Pokemón usando REDUX.
 
