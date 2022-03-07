@@ -1,4 +1,4 @@
-# Pokedux ![Status badge](https://img.shields.io/badge/status-in%20progress-yellow)
+# Pokedux ![Status badge](https://img.shields.io/badge/status-in%20completed-green)
 
 ✨ Encuentra tus pokemones favoritos y descubre todas sus habilidades para convertirte en el mejor Maestro Pokemón usando REDUX.
 
@@ -20,4 +20,3 @@
 ## 🦀 Base de Datos Pokemon
 
 Todos los datos vienen de [PokeApi](https://pokeapi.co/)
-
