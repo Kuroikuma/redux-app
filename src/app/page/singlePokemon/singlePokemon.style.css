@@ -90,3 +90,27 @@
   justify-content: flex-start;
   gap: 10px;
 }
+@media screen and (max-width: 375px) {
+  .singleContainer {
+    height: 90vh;
+    width: 95vw;
+    padding-bottom: 20px;
+    gap: 20px;
+    flex-direction: column;
+  }
+  .singleContainer__img {
+    height: 40%;
+  }
+  .singleContainer__changeImg {
+    height: 15%;
+    width: 90%;
+    flex-direction: row;
+  }
+  .singleContainer__bar {
+    height: 75%;
+    width: 90%;
+  }
+  .singleContainer__bar__item {
+    height: 20%;
+  }
+}

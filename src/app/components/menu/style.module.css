@@ -25,3 +25,8 @@
   height: 80%;
   object-fit: contain;
 }
+@media screen and (max-width: 375px) {
+  .container {
+    grid-template-columns: 0% 30% 20% 20% 30%;
+  }
+}

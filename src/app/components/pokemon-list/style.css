@@ -9,3 +9,9 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 300px;
 }
+@media screen and (max-width: 375px) {
+  .PokemonList {
+    margin-top: 20px;
+    grid-template-columns: 1fr;
+  }
+}
