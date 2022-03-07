@@ -8,5 +8,9 @@ export const Menu = () => {
     navigate('/')
   }
 
-  return <MenuView goHome={goHome} />
+  const goFavorites = () => {
+    navigate('/favorites')
+  }
+
+  return <MenuView goHome={goHome} goFavorites={goFavorites} />
 }

@@ -6,7 +6,7 @@ import { Notification } from '../notification/Notification'
 import { useEffect } from 'react'
 
 export const Search = () => {
-  const message = ['error dea', 'success full']
+  const message = ['not fount', 'success full']
 
   const dispatch = useDispatch()
   let navigate = useNavigate()

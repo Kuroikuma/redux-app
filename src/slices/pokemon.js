@@ -96,20 +96,17 @@ export const pokemonSlice = createSlice({
         if (JSON.parse(localStorage.getItem('favorites'))) {
           const favorites = JSON.parse(localStorage.getItem('favorites'))
 
+          const favNew = favorites.filter((item) => item.id !== action.payload)
+
           if (state.list[currentPokemonItem].favorite) {
-            const favNew = favorites.filter(
-              (item) => item.id !== action.payload
-            )
+            state.favorites = favNew.concat(state.list[currentPokemonItem])
 
             localStorage.setItem(
               'favorites',
               JSON.stringify(favNew.concat(state.list[currentPokemonItem]))
             )
           } else {
-            const favNew = favorites.filter(
-              (item) => item.id !== action.payload
-            )
-
+            state.favorites = favNew
             localStorage.setItem('favorites', JSON.stringify(favNew))
           }
         } else {

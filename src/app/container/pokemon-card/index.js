@@ -8,7 +8,7 @@ export const PokemonCard = ({ name, image, id, types, favorite }) => {
   let navigate = useNavigate()
 
   const goSinglePokemon = () => {
-    navigate(`single-pokemon/${name}`)
+    navigate(`/single-pokemon/${name}`)
   }
 
   //// ACTION CREATOR
